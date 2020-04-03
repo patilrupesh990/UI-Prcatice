@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>User Details</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+<script src="userDetailApp.js"></script>
+<style>
+table {
+  font-family: "Helvetica Neue", Helvetica, sans-serif
+}
+ 
+caption {
+  text-align: left;
+  color: silver;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+}
+ 
+thead {
+  background: SteelBlue;
+  color: white;
+}
+ 
+th,
+td {
+  padding: 5px 10px;
+}
+ 
+tbody tr:nth-child(even) {
+  background: WhiteSmoke;
+}
+ 
+tbody tr td:nth-child(2) {
+  text-align:center;
+}
+ 
+tbody tr td:nth-child(3),
+tbody tr td:nth-child(4) {
+  text-align: right;
+  font-family: monospace;
+}
+ 
+tfoot {
+  background: SeaGreen;
+  color: white;
+  text-align: right;
+}
+ 
+tfoot tr th:last-child {
+  font-family: monospace;
+}
+</style>
+</head>
+<body>
+<h2 align="center">User Details</h2>
+	<div align="center" ng-app="userApp" ng-controller="usercontroller">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>City</th>
+					<th>Country</th>
+					<th>Occupation</th>
+				</tr>
+			</thead>
+			<tr ng-repeat="user in users">
+				<td>{{ user.id }}</td>
+				<td>{{ user.firstName }}</td>
+				<td>{{ user.lastName }}</td>
+				<td>{{ user.city }}</td>
+				<td>{{ user.country }}</td>
+				<td>{{ user.occupation }}</td>
+
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
